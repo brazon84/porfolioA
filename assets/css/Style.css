@@ -291,10 +291,12 @@ body {
   }
 
   .porfolio:hover {
-    cursor: pointer;
-    transform: scale(1.3);
+    cursor: pointer;;
+    transform: rotate(360deg);
     transition-duration: 2s, 1s;
   }
+
+ 
 
   /* contac */
   .contac h3 {
@@ -363,6 +365,7 @@ body {
     padding: 40px;
     align-items: center;
   }
+
   footer {
     word-spacing: 0.25em;
   }
