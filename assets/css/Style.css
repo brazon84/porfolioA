@@ -363,6 +363,14 @@ body {
     padding: 40px;
     align-items: center;
   }
+  footer {
+    word-spacing: 0.25em;
+  }
+
+  footer i {
+    margin: 10px 10px;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -554,14 +562,6 @@ body {
 
   .phone_icon {
     gap: 220px;
-  }
-
-  footer {
-    word-spacing: 0.25em;
-  }
-
-  footer i {
-    margin: 10px 10px;
   }
 
 }
