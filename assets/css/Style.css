@@ -1,13 +1,10 @@
 /*limpia la pagina la pone en 0*/
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-}
-
-::before,
-::after {
   box-sizing: border-box;
-
 }
 
 /*se aplica font-family para aplicar el tipo de letra*/
@@ -42,10 +39,9 @@ body {
   }
 
   .nav button i {
-    color: var(--white);
+    color: var(--yellon);
     font-size: 28px;
     cursor: pointer;
-    color: var(--yellon);
   }
 
   .nav button i:hover {
@@ -54,12 +50,45 @@ body {
     border-radius: 10%;
   }
 
+  /* menu resposi */
+
   .nav_desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+    background-color: var(--yellon);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 20px 0;
+    height: 100%;
+    left: 100%;
+    z-index: 10;
+    transition: 0.3s;
+    gap: 30px;
+    overflow-y: auto;
+  }
+
+  .a {
+    color: var(--purpura);
+    text-decoration: none;
+    font-size: 18px;
+
+  }
+
+  .a:hover {
+    color: var(--white);
+    transition: height 0.5s;
+  }
+
+  /* botton contac */
+  .contac_button_desktop {
     display: none;
   }
 
-  .contac_button_desktop {
-    display: none;
+  .nav_visible {
+    left: 0;
   }
 
   /* section first */
@@ -103,7 +132,7 @@ body {
     gap: 30px
   }
 
-  .icons>div {
+  .icons div {
     background-color: var(--purpura);
     width: 40px;
     height: 40px;
@@ -230,6 +259,10 @@ body {
     font-weight: 550;
   }
 
+  div.skills_img {
+    width: 50%;
+  }
+
   /* porfolios */
   .title_porfolio {
     padding: 20px;
@@ -270,6 +303,7 @@ body {
     margin-bottom: 40px;
     color: var(--black);
     text-align: center;
+    padding: 10px 0px;
   }
 
   .phone_icon {
@@ -277,23 +311,16 @@ body {
     justify-content: center;
     gap: 3rem;
   }
-  p.opcion{
-    text-align: center;
-  }
-  div.icon_first{
-   align-items: column;
-  }
 
-  .icon_first {
+  .icon_frist {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .icon_second {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background-color: var(--beig);
     display: flex;
@@ -317,9 +344,16 @@ body {
     font-weight: 400;
     color: var(--gris);
     font-size: 14px;
- 
+    opacity: 0.5;
   }
-/* footer */
+
+  .icon_second:hover {
+    background-color: var(--yellon);
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+
+  /* footer */
   footer p {
     color: var(--purpura);
     display: flex;
@@ -327,39 +361,252 @@ body {
     text-align: center;
     font-weight: 600;
     padding: 40px;
-align-items: center;
+    align-items: center;
   }
-
 }
 
 @media (min-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .nav_desktop {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    position: inherit;
+    left: 0;
     gap: 30px;
     margin-right: 30px;
     margin-top: 20px;
+    background-color: inherit;
+    overflow-y: auto;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .nav_visible {
+    left: 0;
   }
 
   .a {
     color: var(--purpura);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
 
   }
 
   .a:hover {
     color: var(--yellon);
-    transform: scale(1.3);
-  }
 
-  .nav {
-    display: none;
   }
 
   .section_first {
     margin-top: 20px;
   }
+
+  hr {
+    width: 70%;
+  }
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .nav_desktop {
+    margin-top: 10px;
+  }
+
+  .a {
+    font-size: 18px;
+  }
+
+  .a:hover {
+    color: var(--yellon);
+  }
+
+  .photo_section img {
+    min-width: 500px;
+    margin-bottom: 100px;
+  }
+
+  .section_first {
+    text-align: start;
+  }
+
+  .section_first h1 {
+    font-size: 60px;
+    padding-right: 40px;
+    width: 350px;
+  }
+
+  .section_first p {
+    width: 500px;
+    font-size: 24px;
+  }
+
+  .seccion_second {
+    justify-content: flex-start;
+  }
+
+  .seccion_second p {
+    margin-top: 40px;
+    font-size: 25px;
+  }
+
+  .icons {
+    justify-content: flex-start;
+    margin-top: 70px;
+  }
+
+  .contac_button {
+    display: none;
+  }
+
+  .contac_button_desktop {
+    display: flex;
+    margin-top: 26px;
+  }
+
+  .contac_button_desktop button {
+    border: none;
+    background-color: var(--purpura);
+    width: 400px;
+    padding: 20px;
+    height: 50px;
+    margin: 40px 0px;
+  }
+
+  .contac_button_desktop a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  .contac_button_desktop button:hover {
+    cursor: pointer;
+    background-color: var(--yellon);
+    transform: scale(1.1);
+  }
+
+  .first_main_experience {
+    display: flex;
+    justify-content: center;
+  }
+
+  .first_main_experience h3 {
+    width: 350px;
+  }
+
+  .first_main_experience p {
+    width: 400px;
+  }
+
+  .title_experience {
+    min-width: 30%;
+    margin-left: 120px;
+  }
+
+  .skills_first {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .title_porfolio h3 {
+    margin-top: 80px;
+    font-size: 40px;
+    margin-bottom: 50px;
+    margin-left: 170px;
+  }
+
+  .porfolio_seccion {
+    gap: 55px;
+  }
+
+  .contac h3 {
+    text-align: start;
+    margin-left: 170px;
+  }
+
+  .icon_second {
+    border: 1px solid var(--b);
+    background-color: var(--beig);
+    border-radius: 20%;
+  }
+
+  .icon_second i {
+    font-size: 40px;
+  }
+
+  .phone_icon {
+    gap: 220px;
+  }
+
+  footer {
+    word-spacing: 0.25em;
+  }
+
+  footer i {
+    margin: 10px 10px;
+  }
+
+}
+
+@media (min-width:1024px) {
+
+  div.experience1 {
+    width: 150px;
+  }
+
+  hr {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1440px) {
+  nav.nav {
+    margin-right: 80px;
+  }
+
+  .title_porfolio {
+    margin-left: 20px;
+  }
+
+  .skills h3 {
+    margin-left: 10%;
+  }
+
+  div.skills_first {
+    margin-left: 12%;
+  }
+
+  .title_porfolio h3 {
+    margin-left: 9%;
+  }
+
+  .porfolio_seccion {
+    margin-left: 3%;
+  }
+
+}
+
+@media(min-width: 1440px) {
+  nav.nav {
+    margin-right: 185px;
+  }
+
+}
